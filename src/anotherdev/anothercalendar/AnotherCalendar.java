@@ -44,22 +44,27 @@ public class AnotherCalendar {
         System.out.println("["+iso8601+"] "+msg);
     }
     
-    public void init(String[] args){
-        out("Instance of AnotherCalendar says Hello World! (init)");
-        out(" > Parsing arguments");
-        parseArguments(args);
-    }
-    
     public static AnotherCalendar getInstance(){
         return new AnotherCalendar();
     }
     
-    private void parseArguments(String[] args){
-        
+    
+    public void init(String[] args){
+        out("Instance of AnotherCalendar says Hello World! (init)");
+        out(" > Parsing arguments");
+        parseArguments(args);
+        out(" > Opening GUI");
+        AnotherCalendarGui.main(args);
     }
     
+    private void parseArguments(String[] args){
+        out(" i Parsing arguments is not implemented yet!");
+    }
     
-    public Logger L = Logger.getLogger(AnotherCalendar.class.getName());
+    /**
+     * Logger for the class.
+     */
+    public static final Logger L = Logger.getLogger(AnotherCalendar.class.getName());
     public Map<String, Object> conf = new HashMap(){
         {
             put("VERSION", (float) 0.01);
